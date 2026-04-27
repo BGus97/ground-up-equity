@@ -8,6 +8,7 @@
 <meta property="og:description" content="Development advisory for buyers who want to build instead of overpay. Denver · Golden · Applewood · Wheat Ridge · Lakewood.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://groundupequityco.com">
+<meta property="og:image" content="https://raw.githubusercontent.com/BGus97/ground-up-equity/main/28-web-or-mls-QP--3.jpg">
 <title>Ground Up Equity | Build Smarter. Keep the Developer Profit.</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -46,14 +47,10 @@ nav.scrolled { background: rgba(248,245,239,0.97); border-color: rgba(111,117,99
 .btn-primary:hover { background: #6F7563; }
 .btn-ghost { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: #7a7a70; cursor: pointer; transition: color 0.2s; }
 .btn-ghost:hover { color: #141410; }
-.hero-right { background: #141410; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-.hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(111,117,99,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(111,117,99,0.12) 1px, transparent 1px); background-size: 40px 40px; }
-.hero-steps { position: relative; z-index: 2; padding: 0 60px; width: 100%; max-width: 440px; margin-bottom: 80px; }
-.hero-step { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
-.step-num { font-size: 1.8rem; font-weight: 300; color: #6F7563; width: 44px; flex-shrink: 0; }
-.step-line { flex: 1; height: 1px; background: rgba(255,255,255,0.12); }
-.step-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(248,245,239,0.6); white-space: nowrap; }
-.hero-stats { position: absolute; bottom: 0; left: 0; right: 0; background: #6F7563; padding: 16px 48px; display: flex; gap: 48px; }
+.hero-right { position: relative; overflow: hidden; }
+.hero-right img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.hero-right-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(20,20,16,0.3) 0%, transparent 40%); }
+.hero-stats { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(20,20,16,0.78); backdrop-filter: blur(8px); padding: 16px 48px; display: flex; gap: 48px; border-top: 1px solid rgba(111,117,99,0.3); }
 .stat { text-align: center; }
 .stat-num { font-size: 1.5rem; font-weight: 300; color: #F8F5EF; display: block; }
 .stat-lbl { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(248,245,239,0.65); }
@@ -124,14 +121,30 @@ nav.scrolled { background: rgba(248,245,239,0.97); border-color: rgba(111,117,99
 .tier.featured .tier-btn { background: #6F7563; border-color: #6F7563; color: #F8F5EF; }
 .tier.featured .tier-btn:hover { background: #C8A96A; border-color: #C8A96A; }
 
+/* GALLERY */
+.gallery { padding: 100px 60px; background: #141410; position: relative; overflow: hidden; }
+.gallery-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(111,117,99,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(111,117,99,0.06) 1px, transparent 1px); background-size: 50px 50px; }
+.gallery-inner { position: relative; z-index: 1; }
+.gallery-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 24px; }
+.gallery-header h2 { font-size: clamp(1.8rem, 3vw, 3rem); font-weight: 300; color: #F8F5EF; line-height: 1.15; }
+.gallery-header p { font-size: 0.88rem; line-height: 1.8; color: #9a9f8c; max-width: 380px; font-weight: 300; }
+.gallery-photos { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 4px; }
+.gallery-photo { overflow: hidden; position: relative; }
+.gallery-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
+.gallery-photo:hover img { transform: scale(1.04); }
+.gallery-photo.main { grid-row: span 2; min-height: 560px; }
+.gallery-photo.secondary { min-height: 276px; }
+.gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 20px; background: linear-gradient(transparent, rgba(20,20,16,0.85)); }
+.gallery-caption span { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(248,245,239,0.75); }
+
 /* ABOUT */
-.about { padding: 120px 60px; background: #141410; display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: center; position: relative; overflow: hidden; }
-.about-watermark { position: absolute; right: -40px; top: 50%; transform: translateY(-50%); font-size: 22rem; font-weight: 300; color: rgba(111,117,99,0.05); line-height: 1; pointer-events: none; user-select: none; }
-.about-content { position: relative; z-index: 1; }
-.about-content h2 { font-size: clamp(1.8rem, 3vw, 3rem); font-weight: 300; color: #F8F5EF; line-height: 1.15; margin-bottom: 28px; }
-.about-content p { font-size: 0.92rem; line-height: 1.85; color: rgba(248,245,239,0.58); font-weight: 300; margin-bottom: 18px; }
-.about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; position: relative; z-index: 1; }
-.about-stat { border: 1px solid rgba(111,117,99,0.2); padding: 26px 22px; }
+.about { padding: 120px 60px; background: #F8F5EF; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.about h2 { font-size: clamp(1.8rem, 3vw, 3rem); font-weight: 300; line-height: 1.15; margin-bottom: 28px; color: #141410; }
+.about p { font-size: 0.92rem; line-height: 1.85; color: #7a7a70; font-weight: 300; margin-bottom: 18px; }
+.about-quote { border-left: 3px solid #6F7563; padding-left: 24px; margin: 28px 0; }
+.about-quote p { font-size: 1.05rem; line-height: 1.7; color: #141410; font-style: italic; font-weight: 300; margin-bottom: 0; }
+.about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.about-stat { background: #141410; padding: 26px 22px; }
 .about-stat-num { font-size: 2.2rem; font-weight: 300; color: #C8A96A; display: block; margin-bottom: 6px; }
 .about-stat-desc { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(248,245,239,0.38); line-height: 1.5; }
 
@@ -155,11 +168,18 @@ nav.scrolled { background: rgba(248,245,239,0.97); border-color: rgba(111,117,99
 .guide-success p { font-size: 0.88rem; color: #6F7563; font-weight: 300; }
 
 /* CTA */
-.cta { padding: 140px 60px; text-align: center; background: #F8F5EF; position: relative; overflow: hidden; }
-.cta-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(111,117,99,0.07) 0%, transparent 70%); pointer-events: none; }
-.cta h2 { font-size: clamp(2rem, 4.5vw, 4.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 24px; position: relative; }
-.cta p { font-size: 0.95rem; color: #7a7a70; font-weight: 300; margin-bottom: 48px; max-width: 460px; margin-left: auto; margin-right: auto; line-height: 1.8; position: relative; }
-.cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
+.cta { padding: 140px 60px; text-align: center; background: #141410; position: relative; overflow: hidden; }
+.cta-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(111,117,99,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(111,117,99,0.06) 1px, transparent 1px); background-size: 50px 50px; }
+.cta-inner { position: relative; z-index: 1; }
+.cta h2 { font-size: clamp(2rem, 4.5vw, 4.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 24px; color: #F8F5EF; }
+.cta h2 em { color: #C8A96A; font-style: italic; }
+.cta-sub { font-size: 0.95rem; color: rgba(248,245,239,0.6); font-weight: 300; margin-bottom: 16px; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.8; }
+.cta-scarcity { font-size: 0.78rem; letter-spacing: 0.06em; color: #9a9f8c; margin-bottom: 48px; font-style: italic; }
+.cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-primary-light { background: #F8F5EF; color: #141410; padding: 16px 36px; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; border: none; font-family: Georgia, serif; transition: background 0.2s; display: inline-block; }
+.btn-primary-light:hover { background: #C8A96A; }
+.btn-ghost-light { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(248,245,239,0.5); cursor: pointer; transition: color 0.2s; display: flex; align-items: center; }
+.btn-ghost-light:hover { color: #F8F5EF; }
 
 /* FOOTER */
 footer { background: #141410; padding: 50px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(111,117,99,0.2); flex-wrap: wrap; gap: 24px; }
@@ -187,7 +207,10 @@ footer { background: #141410; padding: 50px 60px; display: flex; justify-content
   .hero-steps { padding: 0 28px; }
   .hero-stats { padding: 14px 28px; gap: 24px; }
   .problem, .audience, .about, .guide { grid-template-columns: 1fr; gap: 48px; padding: 80px 28px; }
-  .how, .services, .cta { padding: 80px 28px; }
+  .how, .services, .cta, .gallery { padding: 80px 28px; }
+  .gallery-photos { grid-template-columns: 1fr; }
+  .gallery-photo.main { min-height: 320px; grid-row: span 1; }
+  .gallery-photo.secondary { min-height: 220px; }
   .steps-grid { grid-template-columns: 1fr 1fr; }
   .tiers { grid-template-columns: 1fr; }
   .how-header { flex-direction: column; margin-bottom: 40px; }
@@ -208,14 +231,20 @@ footer { background: #141410; padding: 50px 60px; display: flex; justify-content
 <!-- NAV -->
 <nav id="main-nav">
   <div class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polyline points="6,50 6,6 50,6" stroke="#6F7563" stroke-width="2.5" stroke-linecap="square" fill="none"/>
-      <polyline points="6,50 50,50" stroke="#6F7563" stroke-width="2.5" stroke-linecap="square" fill="none"/>
-      <line x1="50" y1="6" x2="50" y2="20" stroke="#6F7563" stroke-width="2.5" stroke-linecap="square"/>
-      <line x1="17" y1="50" x2="17" y2="28" stroke="#141410" stroke-width="3" stroke-linecap="square"/>
-      <line x1="28" y1="50" x2="28" y2="20" stroke="#141410" stroke-width="3" stroke-linecap="square"/>
-      <line x1="39" y1="50" x2="39" y2="28" stroke="#141410" stroke-width="3" stroke-linecap="square"/>
-      <line x1="6" y1="54" x2="50" y2="54" stroke="#C8A96A" stroke-width="2"/>
+    <svg viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Outer frame: full top, full left, full bottom, partial right (open corner) -->
+      <polyline points="8,60 8,8 60,8 60,8" stroke="#141410" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <line x1="8" y1="60" x2="52" y2="60" stroke="#141410" stroke-width="2.8" stroke-linecap="round"/>
+      <line x1="60" y1="8" x2="60" y2="28" stroke="#141410" stroke-width="2.8" stroke-linecap="round"/>
+      <!-- House structure inside: peaked roof lines -->
+      <polyline points="18,52 18,36 28,24 38,36 38,52" stroke="#6F7563" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <!-- Center vertical bar (taller) -->
+      <line x1="28" y1="52" x2="28" y2="32" stroke="#6F7563" stroke-width="2.2" stroke-linecap="round"/>
+      <!-- Right structure -->
+      <line x1="46" y1="52" x2="46" y2="38" stroke="#6F7563" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="38" y1="38" x2="52" y2="38" stroke="#6F7563" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- Gold ground line -->
+      <line x1="8" y1="60" x2="52" y2="60" stroke="#C8A96A" stroke-width="2.5" stroke-linecap="round"/>
     </svg>
     <div>
       <span class="nav-wordmark">GROUND <span>UP</span> EQUITY</span>
@@ -223,10 +252,11 @@ footer { background: #141410; padding: 50px 60px; display: flex; justify-content
     </div>
   </div>
   <div class="nav-links">
-    <a onclick="scrollTo('how')">How It Works</a>
-    <a onclick="scrollTo('services')">Services</a>
-    <a onclick="scrollTo('about')">About</a>
-    <a onclick="scrollTo('contact')" class="nav-cta">Book a Call</a>
+    <a onclick="scrollToSection('how')">How It Works</a>
+    <a onclick="scrollToSection('builds')">Our Builds</a>
+    <a onclick="scrollToSection('services')">Services</a>
+    <a onclick="scrollToSection('about')">About</a>
+    <a onclick="scrollToSection('contact')" class="nav-cta">Get Started</a>
   </div>
 </nav>
 
@@ -235,21 +265,15 @@ footer { background: #141410; padding: 50px 60px; display: flex; justify-content
   <div class="hero-left">
     <span class="hero-tag">Development Advisory · Denver, CO</span>
     <h1>Build your home.<br><em>Keep the developer profit.</em></h1>
-    <p>We help you buy land, assemble the right team, and build smarter—without overpaying for someone else's markup.</p>
+    <p>Why pay someone else's markup? We help you buy land, assemble the right team, and build smarter—so you capture the upside instead of funding it.</p>
     <div class="hero-btns">
-      <button class="btn-primary" onclick="scrollTo('contact')">Book a Feasibility Call</button>
-      <span class="btn-ghost" onclick="scrollTo('guide')">Download the Cost Guide →</span>
+      <button class="btn-primary" onclick="scrollToSection('contact')">See If Building Makes Sense for You</button>
+      <span class="btn-ghost" onclick="scrollToSection('guide')">Download the Cost Guide →</span>
     </div>
   </div>
   <div class="hero-right">
-    <div class="hero-grid"></div>
-    <div class="hero-steps">
-      <div class="hero-step"><span class="step-num">01</span><div class="step-line"></div><span class="step-label">Find the Right Lot</span></div>
-      <div class="hero-step"><span class="step-num">02</span><div class="step-line"></div><span class="step-label">Run the Numbers</span></div>
-      <div class="hero-step"><span class="step-num">03</span><div class="step-line"></div><span class="step-label">Assemble the Team</span></div>
-      <div class="hero-step"><span class="step-num">04</span><div class="step-line"></div><span class="step-label">Build with Strategy</span></div>
-      <div class="hero-step"><span class="step-num">05</span><div class="step-line"></div><span class="step-label">Capture the Equity</span></div>
-    </div>
+    <img src="https://raw.githubusercontent.com/BGus97/ground-up-equity/main/28-web-or-mls-QP--3.jpg" alt="Custom home built in Denver by Ground Up Equity" loading="eager">
+    <div class="hero-right-overlay"></div>
     <div class="hero-stats">
       <div class="stat"><span class="stat-num">15–30%</span><span class="stat-lbl">Avg. Developer Margin</span></div>
       <div class="stat"><span class="stat-num">20+</span><span class="stat-lbl">Years RE Experience</span></div>
@@ -258,11 +282,45 @@ footer { background: #141410; padding: 50px 60px; display: flex; justify-content
   </div>
 </section>
 
+
+<!-- HOOK SECTION -->
+<section style="padding: 80px 60px; background: #141410; position: relative; overflow: hidden;">
+  <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(111,117,99,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(111,117,99,0.06) 1px, transparent 1px); background-size: 50px 50px;"></div>
+  <div style="position: relative; z-index: 1; max-width: 860px; margin: 0 auto; text-align: center;">
+    <span style="font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: #6F7563; display: block; margin-bottom: 24px;">The Reality</span>
+    <h2 style="font-family: Georgia, serif; font-size: clamp(1.8rem, 3.5vw, 3.2rem); font-weight: 300; color: #F8F5EF; line-height: 1.2; margin-bottom: 24px;">
+      Most homes you see for sale include a built-in profit margin<br>you're paying for.
+    </h2>
+    <p style="font-size: 1.05rem; line-height: 1.8; color: rgba(248,245,239,0.6); font-weight: 300; margin-bottom: 48px; max-width: 640px; margin-left: auto; margin-right: auto;">
+      In many Denver neighborhoods, that margin runs <strong style="color: #C8A96A; font-weight: 400;">15–30% above what it actually cost to build.</strong> You're not paying for quality — you're paying for someone else's profit.
+    </p>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; max-width: 700px; margin: 0 auto 48px;">
+      <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(111,117,99,0.2); padding: 28px 20px; text-align: center;">
+        <span style="font-family: Georgia, serif; font-size: 1.8rem; font-weight: 300; color: #F8F5EF; display: block; margin-bottom: 6px;">$2,200,000</span>
+        <span style="font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(248,245,239,0.4);">Purchase Price</span>
+      </div>
+      <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(111,117,99,0.2); padding: 28px 20px; text-align: center;">
+        <span style="font-family: Georgia, serif; font-size: 1.8rem; font-weight: 300; color: #F8F5EF; display: block; margin-bottom: 6px;">$1,890,000</span>
+        <span style="font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(248,245,239,0.4);">Total Cost to Build</span>
+      </div>
+      <div style="background: rgba(111,117,99,0.15); border: 1px solid rgba(200,169,106,0.4); padding: 28px 20px; text-align: center;">
+        <span style="font-family: Georgia, serif; font-size: 1.8rem; font-weight: 300; color: #C8A96A; display: block; margin-bottom: 6px;">~$310,000</span>
+        <span style="font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(200,169,106,0.7);">Developer Margin</span>
+      </div>
+    </div>
+    <p style="font-size: 0.88rem; line-height: 1.8; color: rgba(248,245,239,0.5); font-style: italic; margin-bottom: 36px;">That gap is what we help you capture.</p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <button class="btn-primary-light" onclick="scrollToSection('contact')" style="background: #F8F5EF; color: #141410; padding: 14px 32px; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; border: none; font-family: Georgia, serif;">See If Building Makes Sense for You</button>
+      <span onclick="scrollToSection('how')" style="font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(248,245,239,0.45); cursor: pointer; display: flex; align-items: center;">How It Works →</span>
+    </div>
+  </div>
+</section>
+
 <!-- PROBLEM -->
 <section class="problem fade-up">
   <div>
     <span class="section-tag">The Problem</span>
-    <h2>Most buyers overpay—and don't even realize it.</h2>
+    <h2>Most $1M+ homes didn't cost $1M+ to build.</h2>
     <p>Spec homes are convenient. But you're paying for developer profit margins of 15–30%, design decisions you didn't make, and finishes that don't match your priorities.</p>
     <p>At the same time, building feels overwhelming. Where do you find land? Who do you trust? How do you avoid costly first-timer mistakes? That's where we come in.</p>
   </div>
@@ -292,27 +350,27 @@ footer { background: #141410; padding: 50px 60px; display: flex; justify-content
     <div class="steps-grid fade-up">
       <div class="step-card">
         <span class="step-card-num">01</span>
-        <h3>Find the Right Lot</h3>
+        <h3>Find a Lot That Actually Makes Financial Sense</h3>
         <p>We identify land and scrape opportunities that make financial sense—zoning, buildability, comps included.</p>
       </div>
       <div class="step-card">
         <span class="step-card-num">02</span>
-        <h3>Run the Numbers</h3>
+        <h3>Know the Real Cost Before You Commit</h3>
         <p>Before you commit, we break down build costs, total investment, and estimated finished value. No guessing.</p>
       </div>
       <div class="step-card">
         <span class="step-card-num">03</span>
-        <h3>Assemble the Team</h3>
+        <h3>Build the Right Team Around You</h3>
         <p>Vetted builders, architects, designers, and lenders from our trusted network—so you don't end up with the wrong contractor.</p>
       </div>
       <div class="step-card">
         <span class="step-card-num">04</span>
-        <h3>Build with Strategy</h3>
+        <h3>Make Smart Decisions Under Pressure</h3>
         <p>Smart decisions on budget, layout, and timeline so you don't learn the hard lessons the expensive way.</p>
       </div>
       <div class="step-card">
         <span class="step-card-num">05</span>
-        <h3>Capture the Equity</h3>
+        <h3>Capture the Equity You Built</h3>
         <p>Move in with built-in equity, refinance, or sell for a profit. You decide how to use the upside.</p>
       </div>
     </div>
@@ -360,7 +418,7 @@ footer { background: #141410; padding: 50px 60px; display: flex; justify-content
       <div class="tier-item"><span class="tier-check">✓</span> Exit value + comparable sales</div>
       <div class="tier-item"><span class="tier-check">✓</span> "Should you do this?" recommendation</div>
       <div class="tier-item"><span class="tier-check">✓</span> One-time, no ongoing commitment</div>
-      <button class="tier-btn" onclick="scrollTo('contact')">Book a Consult</button>
+      <button class="tier-btn" onclick="scrollToSection('contact')">See If This Makes Sense</button>
     </div>
     <div class="tier featured">
       <span class="tier-tag">Tier 2 · Most Popular</span>
@@ -372,31 +430,62 @@ footer { background: #141410; padding: 50px 60px; display: flex; justify-content
       <div class="tier-item"><span class="tier-check">✓</span> Construction loan guidance</div>
       <div class="tier-item"><span class="tier-check">✓</span> Ongoing guidance through the build</div>
       <div class="tier-item"><span class="tier-check">✓</span> Budget + decision coaching</div>
-      <button class="tier-btn" onclick="scrollTo('contact')">Start Here</button>
+      <button class="tier-btn" onclick="scrollToSection('contact')">Start Here</button>
     </div>
     <div class="tier">
       <span class="tier-tag">Tier 3</span>
-      <div class="tier-name">Land + Commission</div>
+      <div class="tier-name">Buyer Representation</div>
       <span class="tier-price">Commission-based</span>
       <div class="tier-item"><span class="tier-check">✓</span> Licensed real estate representation</div>
-      <div class="tier-item"><span class="tier-check">✓</span> Land purchase + negotiation</div>
+      <div class="tier-item"><span class="tier-check">✓</span> Land + lot sourcing and negotiation</div>
       <div class="tier-item"><span class="tier-check">✓</span> Wash Park · Golden · Applewood · Wheat Ridge · Lakewood</div>
       <div class="tier-item"><span class="tier-check">✓</span> Investment perspective on every deal</div>
       <div class="tier-item"><span class="tier-check">✓</span> Can be combined with advisory</div>
-      <button class="tier-btn" onclick="scrollTo('contact')">Get in Touch</button>
+      <button class="tier-btn" onclick="scrollToSection('contact')">Get in Touch</button>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="builds">
+  <div class="gallery-bg"></div>
+  <div class="gallery-inner">
+    <div class="gallery-header fade-up">
+      <h2>See What's Possible</h2>
+      <p>Recent builds in the Denver metro—land identified, teams assembled, and built from the ground up.</p>
+    </div>
+    <div class="gallery-photos fade-up">
+      <div class="gallery-photo main">
+        <img src="https://raw.githubusercontent.com/BGus97/ground-up-equity/main/29-web-or-mls-QP--4.jpg" alt="Custom home rear elevation - Denver metro" loading="lazy">
+        <div class="gallery-caption"><span>Denver Metro · Semi-Custom Build</span></div>
+      </div>
+      <div class="gallery-photo secondary">
+        <img src="https://raw.githubusercontent.com/BGus97/ground-up-equity/main/05%20-%20Living%20area%206610%20W%2031st%20Ave%20Wheat%20Ridge%2C%20CO%2080214.jpg" alt="Living area interior - Wheat Ridge custom build" loading="lazy">
+        <div class="gallery-caption"><span>Infill Build · Living Area</span></div>
+      </div>
+      <div class="gallery-photo secondary">
+        <img src="https://raw.githubusercontent.com/BGus97/ground-up-equity/main/10%20-%206610%20W%2031st%20Ave%20Wheat%20Ridge%2C%20CO%2080214.jpg" alt="Staircase interior - Wheat Ridge custom build" loading="lazy">
+        <div class="gallery-caption"><span>Infill Build · Interior Detail</span></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section class="about" id="about">
-  <div class="about-watermark">GUE</div>
-  <div class="about-content fade-up">
-    <span class="section-tag" style="color:#9a9f8c">About</span>
+  <div class="fade-up">
+    <span class="section-tag">About</span>
     <h2>Real estate experience.<br>Developer mindset.</h2>
     <p>Brendan Gustafson is a Colorado-based Realtor®, investor, and developer with over 20 years of experience in sales and real estate.</p>
-    <p>He has personally built and remodeled properties, invested across multiple Colorado markets, and structured deals from both a buyer and developer perspective.</p>
+    <div class="about-quote">
+      <p>"I've seen both sides of the deal—as a buyer and as a developer. That perspective is exactly what most buyers are missing."</p>
+    </div>
+    <p>He has personally built and remodeled properties across the Denver metro, invested across multiple Colorado markets, and structured deals from both sides of the table.</p>
     <p>Ground Up Equity was created to give buyers access to that same insight—without the trial and error.</p>
+    <div style="margin-top: 32px; padding-top: 28px; border-top: 1px solid rgba(111,117,99,0.2);">
+      <p style="font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: #9a9f8c; margin-bottom: 14px; font-weight: 300;">Licensed Realtor® · Powered by</p>
+      <img src="https://raw.githubusercontent.com/BGus97/ground-up-equity/main/BrendanGustafson_Logos_Brendan%2BKentwood_Horizontal_DarkGreen.png" alt="Brendan Gustafson · Kentwood Real Estate" style="height: 48px; width: auto; display: block; opacity: 0.85;">
+    </div>
   </div>
   <div class="about-stats fade-up">
     <div class="about-stat">
@@ -445,28 +534,34 @@ footer { background: #141410; padding: 50px 60px; display: flex; justify-content
 </section>
 
 <!-- CTA -->
-<section class="cta fade-up" id="contact">
-  <div class="cta-glow"></div>
-  <h2>Thinking about building?<br>Start with a conversation.</h2>
-  <p>The first step is a feasibility call. We'll look at your goals, your budget, and whether building actually makes sense for your situation—no pressure, just clarity.</p>
-  <div class="cta-btns">
-    <a href="mailto:Brendan.GUEC@gmail.com?subject=Feasibility Call Request" class="btn-primary">Book a Feasibility Call</a>
-    <span class="btn-ghost" onclick="scrollTo('guide')">Download the Guide First →</span>
+<section class="cta" id="contact">
+  <div class="cta-grid"></div>
+  <div class="cta-inner fade-up">
+    <h2>Curious if building makes sense for you?<br><em>Let's find out together.</em></h2>
+    <p class="cta-sub">A quick 15-minute call is all it takes. We'll look at your goals, your budget, and your situation—and give you an honest answer on whether building is the right move. No commitment, no sales pitch.</p>
+    <p class="cta-scarcity">I work with a limited number of advisory clients at a time—if you're serious about building, let's talk.</p>
+    <div class="cta-btns">
+      <a href="mailto:Brendan.GUEC@gmail.com?subject=Is Building Right for Me?" class="btn-primary-light">See If Building Makes Sense for You</a>
+      <span class="btn-ghost-light" onclick="scrollToSection('guide')">Download the Guide First →</span>
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-brand">
-    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="120" height="120" fill="#141410"/>
-      <path d="M14,38 A24,24 0 1,0 38,62 L38,50 L26,50" stroke="#F8F5EF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <path d="M48,30 L48,54 A10,10 0 0,0 68,54 L68,30" stroke="#F8F5EF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <line x1="78" y1="30" x2="106" y2="30" stroke="#F8F5EF" stroke-width="3.5" stroke-linecap="round"/>
-      <line x1="78" y1="46" x2="100" y2="46" stroke="#C8A96A" stroke-width="3.5" stroke-linecap="round"/>
-      <line x1="78" y1="62" x2="106" y2="62" stroke="#F8F5EF" stroke-width="3.5" stroke-linecap="round"/>
-      <line x1="78" y1="30" x2="78" y2="62" stroke="#F8F5EF" stroke-width="3.5" stroke-linecap="round"/>
-      <line x1="14" y1="82" x2="106" y2="82" stroke="#C8A96A" stroke-width="2"/>
+    <svg viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Outer frame -->
+      <polyline points="8,60 8,8 60,8 60,8" stroke="#F8F5EF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <line x1="8" y1="60" x2="52" y2="60" stroke="#F8F5EF" stroke-width="2.8" stroke-linecap="round"/>
+      <line x1="60" y1="8" x2="60" y2="28" stroke="#F8F5EF" stroke-width="2.8" stroke-linecap="round"/>
+      <!-- House structure -->
+      <polyline points="18,52 18,36 28,24 38,36 38,52" stroke="#9a9f8c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <line x1="28" y1="52" x2="28" y2="32" stroke="#9a9f8c" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="46" y1="52" x2="46" y2="38" stroke="#9a9f8c" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="38" y1="38" x2="52" y2="38" stroke="#9a9f8c" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- Gold ground line -->
+      <line x1="8" y1="60" x2="52" y2="60" stroke="#C8A96A" stroke-width="2.5" stroke-linecap="round"/>
     </svg>
     <div>
       <span class="footer-name">GROUND <span>UP</span> EQUITY</span>
@@ -474,17 +569,21 @@ footer { background: #141410; padding: 50px 60px; display: flex; justify-content
     </div>
   </div>
   <div class="footer-links">
-    <a onclick="scrollTo('how')">How It Works</a>
-    <a onclick="scrollTo('services')">Services</a>
-    <a onclick="scrollTo('about')">About</a>
-    <a onclick="scrollTo('contact')">Contact</a>
+    <a onclick="scrollToSection('how')">How It Works</a>
+    <a onclick="scrollToSection('builds')">Our Builds</a>
+    <a onclick="scrollToSection('services')">Services</a>
+    <a onclick="scrollToSection('about')">About</a>
+    <a onclick="scrollToSection('contact')">Contact</a>
   </div>
-  <span class="footer-copy">© 2026 Ground Up Equity · Denver · Golden · Applewood · Wheat Ridge · Lakewood · Licensed Realtor®</span>
+  <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
+    <img src="https://raw.githubusercontent.com/BGus97/ground-up-equity/main/BrendanGustafson_Logos_Brendan%2BKentwood_Horizontal_White.png" alt="Brendan Gustafson · Kentwood Real Estate" style="height: 36px; width: auto; display: block; opacity: 0.6;">
+    <span class="footer-copy">© 2026 Ground Up Equity · Denver · Golden · Applewood · Wheat Ridge · Lakewood</span>
+  </div>
 </footer>
 
 <script>
   // Smooth scroll
-  function scrollTo(id) {
+  function scrollToSection(id) {
     var el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
@@ -512,9 +611,31 @@ footer { background: #141410; padding: 50px 60px; display: flex; justify-content
     var name = document.getElementById('guide-name').value;
     var email = document.getElementById('guide-email').value;
     if (!name || !email) return;
-    window.location.href = 'mailto:Brendan.GUEC@gmail.com?subject=Cost Guide Request&body=Name: ' + encodeURIComponent(name) + '%0AEmail: ' + encodeURIComponent(email);
-    document.getElementById('guide-form-fields').style.display = 'none';
-    document.getElementById('guide-success').style.display = 'block';
+
+    var btn = document.querySelector('.guide-submit');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    fetch('https://formspree.io/f/xyklovld', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name: name, email: email, _subject: 'GUE Cost Guide Request' })
+    })
+    .then(function(res) {
+      if (res.ok) {
+        document.getElementById('guide-form-fields').style.display = 'none';
+        document.getElementById('guide-success').style.display = 'block';
+      } else {
+        btn.textContent = 'Send Me the Guide →';
+        btn.disabled = false;
+        alert('Something went wrong. Please email Brendan.GUEC@gmail.com directly.');
+      }
+    })
+    .catch(function() {
+      btn.textContent = 'Send Me the Guide →';
+      btn.disabled = false;
+      alert('Something went wrong. Please email Brendan.GUEC@gmail.com directly.');
+    });
   }
 </script>
 </body>
