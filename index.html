@@ -224,6 +224,11 @@ footer { background: #141410; padding: 50px 60px; display: flex; justify-content
   .cta-btns { flex-direction: column; align-items: center; }
   .about-stats { grid-template-columns: 1fr 1fr; }
 }
+
+@media (max-width: 600px) {
+  .hook-grid { grid-template-columns: 1fr !important; max-width: 100% !important; }
+  .hook-grid > div { padding: 20px !important; }
+}
 </style>
 </head>
 <body>
@@ -294,7 +299,7 @@ footer { background: #141410; padding: 50px 60px; display: flex; justify-content
     <p style="font-size: 1.05rem; line-height: 1.8; color: rgba(248,245,239,0.6); font-weight: 300; margin-bottom: 48px; max-width: 640px; margin-left: auto; margin-right: auto;">
       In many Denver neighborhoods, that margin runs <strong style="color: #C8A96A; font-weight: 400;">15–30% above what it actually cost to build.</strong> You're not paying for quality — you're paying for someone else's profit.
     </p>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; max-width: 700px; margin: 0 auto 48px;">
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; max-width: 700px; margin: 0 auto 48px;" class="hook-grid">
       <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(111,117,99,0.2); padding: 28px 20px; text-align: center;">
         <span style="font-family: Georgia, serif; font-size: 1.8rem; font-weight: 300; color: #F8F5EF; display: block; margin-bottom: 6px;">$2,200,000</span>
         <span style="font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(248,245,239,0.4);">Purchase Price</span>
